@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --background-color: black;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+}
+
+a{
+    text-decoration: none;
+    color:#5a5a5a;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+.arrows{
+    width:60px;
+    position: fixed;
+    right:0%;
+    top:9%;
+    z-index: 1000;
+    padding:2px;
+    background-color: rgba(33,33,33, 0.5);
+    
+}
+.item-bar{
+    display:flex;
+    overflow: hidden;
+    
+    position: fixed;
+    left: 19%;
+    top:9%;
+    background-color: #212121;
+    z-index: 0;
+}
+.items{
+    margin:4px 6px;
+    padding:4px;
+    background-color: #303030;
+    border: #AAAAAA;
+    border-radius: 10px;
+    color:white;
+    width: max-content;
+    
+}
+#videos-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  padding:20px 10px;
+  margin-top: 2%;
+  margin-left: 20%;
+  
+  color: white;
+}
+
+.title{
+    margin-bottom: 8px;
+}
+#comments {
+  color: white;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 1000;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .middle {
+    flex: 0.5;
+    display: flex;
+    gap: 5px;
+    
+  }
+  
+  .middle .input {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .middle .input input {
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .middle .input button {
+    border: none;
+    background-color: #303030;
+  }
+  .right{
+    display:flex;
+    padding:4px;
+    padding:8px;
+    gap:10px;
+  }
+   .item-container{
+    display:flex;
+    flex-wrap: wrap;
+    color: #FFFFFF ;
+  }
+  .item-container .about{
+    font-size: 13px;
+    padding: 4px 3px 2px 3px;
+    margin:2px;
+  }
+  aside hr{
+    background-color: #303030;
+    margin-left:0;
+    border: none;
+    height:1px;
+  }
+  aside{
+    width: 240px;
+    height: 90vh;
+    background-color: #212121;
+    top:0;
+    position:fixed;
+    margin-top: 60px;
+    padding:10px;
+    overflow-y: auto;
+    z-index: 1000;
+    
+
+  }
+  aside .title{
+    color:#AAAAAA;
+    font-weight: 500;
+  }
+ 
+
+  
+ 
