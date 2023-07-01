@@ -1,5 +1,5 @@
-//const BASE_URL = "https://www.googleapis.com/youtube/v3";
-//const API_KEY = "AIzaSyCx-Xi2daaOrPmQl9Y8inmmDvmfbvsjUY8";
+const BASE_URL = "https://www.googleapis.com/youtube/v3";
+const API_KEY = "AIzaSyCx-Xi2daaOrPmQl9Y8inmmDvmfbvsjUY8";
 
 const container = document.getElementById("videos-container");
 
