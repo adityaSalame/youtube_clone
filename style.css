@@ -76,7 +76,7 @@ nav .hamimg{
     border-radius: 10rem 0rem 0rem 10rem;
     background-color: var(--background-color);
     border: none;
-    color:var(--text) ;
+    color:var(--text-color) ;
     padding-left: 1rem;
     font-weight: bold;
 }

@@ -5,56 +5,282 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./videoDetailsstyle.css">
 </head>
 <body>
-    <nav>
-        <div class="left">
-          <a href=""">
-            <img src="assets/hamburger.png" />
-          </div>
-  
-          <div class="logo">
-            <img src="assets/Logo.png" >
-          </div>
+  <nav class="flex-div">
+    <div class="navleft">
+        <img class="hamimg"src="./assets/hamburger.png">
+        <img src="./assets/Logo.png">
+
+    </div>
+    <div class="navmiddle flex-div">
+        <div class="searchbox flex-div">
+            <input type="text" class="input" placeholder="">
+            <div class="searchicon">
+                <img src="./assets/search.png">
+            </div>
         </div>
-  
-        <div class="middle">
-          <div class="input">
-            <input type="search" placeholder="Search" />
-            <button type="button">
-              <img src="/assets/search.png" />
-            </button>
-          </div>
-          <a href=""">
-            <img src="/assets/mic.png" />
-          </div>
+        <div class="micicon">
+            <img class="micimg" src="./assets/mic.png">
         </div>
-  
-        <div class="right">
-          <a href="""><img src="assets/create.png" ></div>
-          <a href="""><img src="assets/apps.png" ></div>
-          <a href="""><img src="assets/notifications.png" ></div>
-          <a href="""><img src="assets/User-Avatar.png" ></div>
-        </div>
-      </nav>
-      <div class="sections">
-        <div class="first-section">
-            <iframe id="yt-video" width="420" height="315" src=""fullscreen="true" >
-    
-            </iframe>
+    </div>
+    <div class="navright">
+        <img src="./assets/create.png">
+        <img src="./assets/notifications.png">
+        <img src="./assets/User-Avatar.png">
         
-            <div id="comments"></div>
-            <div id="videos-container"></div>
-            <script src="./video.js"></script>
-            <script src="./script.js"></script>
-            <script src="https://www.youtube.com/iframe_api"></script>
+    </div>
+</nav>
+<!---------sidebar----------------------------->
+ <div class="side-none">
+    <div class="shortcut-links">
+        <div class="item-container">            
+            <a href=""><img class="show" src="./assets/home.png">
+            <p>Home</p></a>
+        </div>
+        <div class="item-container">
+            <a href=""><img class="show" src="./assets/explore.png">
+            <p>Explore</p></a>
+        </div>
+        <div class="item-container">
+            <a href=""><img class="show" src="./assets/subscriptions.png">
+            <p>Subscriptions</p></a>
+        </div>  
+    </div>
+    <hr>
+    <div class="shortcut-links">
+        <div class="item-container">
+            <a href=""><img src="./assets/library.png">
+            <p>Library</p></a>
+        </div>
+    
+        <div class="item-container">
+            <a href=""><img src="./assets/history.png">
+            <p>History</p></a>
+        </div>
+    
+        <div class="item-container">
+            <a href=""><img class="show" src="./assets/yourVideos.png">
+        <p>Your Videos</p></a>
+        </div>
+        
+        <div class="item-container">
+            <a href=""><img src="./assets/watchLater.png">
+            <p>Watch Later</p></a>
+        </div>
+       
+        <div class="item-container">
+            <a href=""><img src="./assets/liked.png">
+            <p>Liked Videos</p></a>
+        </div>
+
+        <div class="item-container">
+            <a href=""><img src="./assets/arrowBottom.png">
+            <p>Show More</p></a>
+        </div>
+        
+    </div>
+    <hr>
+    <div class="shortcut-links subscriptions">
+        <div class="title">SUBSCRIPTIONS</div>
+        <div class="item-container">
+            <a href=""><img src="./assets/User-Avatar.png">
+        <p >Marcus Levin</p></a>
+        </div>
+        
+        <div class="item-container">
+            <a href=""><img src="./assets/User-Avatar.png">
+            <p>Alan Cooper</p></a>
+        </div>
+
+        <div class="item-container">
+            <a href=""><img src="./assets/User-Avatar.png">
+            <p>Alexis Sears</p></a>
+        </div>
+
+        <div class="item-container">
+            <a href=""><img src="./assets/User-Avatar.png">
+        <p>Jessica Lambart</p></a>
+        </div>
+
+        <div class="item-container">
+            <a href=""><img src="./assets/User-Avatar.png">
+        <p>Anna White</p></a>
+        </div>
+        
+
+        
+    </div>
+    <hr>
+    <div class="shortcut-links">
+        <div class="title">MORE FROM YOUTUBE</div>
+        <div class="item-container">
+            <a href=""><img src="./assets/premium.png">
+        <p >Youtube Premium</p></a>
+        </div>
+        
+        <div class="item-container">
+            <a href=""><img src="./assets/gaming.png">
+            <p>Gaming</p></a>
+        </div>
+
+        <div class="item-container">
+            <a href=""><img src="./assets/live.png">
+            <p>Live</p></a>
+        </div>
+
+        <div class="item-container">
+            <a href=""><img src="./assets/sports.png">
+        <p>Sports</p></a>
+        </div>
+        
+    </div>
+    <hr>
+    <div class="shortcut-links">
+        <div class="item-container">
+            <a href=""><img src="./assets/settings.png">
+        <p>Settings</p></a>
+        </div>
+        
+        <div class="item-container">
+            <a href=""><img src="./assets/report.png">
+        <p>Report history</p></a>
+        </div>
+        
+        <div class="item-container">
+            <a href=""><img src="./assets/help.png">
+        <p>Help</p></a>
+        </div>
+        
+        <div class="item-container">
+            <a href=""><img src="./assets/feedback.png">
+        <p >Send feedback</p></a>
+        </div>
+        
+    </div>
+    <hr>
+    <div class="shortcut-links bottom-links">
+        <div class="item-container aboutcontainer">
+            <div class="about">About</div>
+            <div class="about">Press</div>
+            <div class="about">Contact us</div>
+            <div class="about">Creators</div>
+            <div class="about">Advertise</div>
+            <div class="about">Developers</div>
+        </div>
+        <br>
+        <div class="item-container">
+            <div class="about">Terms</div>
+            <div class="about">Privacy</div>
+            <div class="about">Policy & Safety</div>
+            <div class="about">How YouTube works</div>
+            <div class="about">Test new features</div>
+        </div>
+        <br>
+        <div class="item-container google">
+            <div class="google">
+                © 2023 Google LLC
+            </div>
+        </div>
+        <br>
+    </div>
+ </div>
+ <!----------------------------------------------mainsection---------------------------------------->
+       <div class="sections">
+        <div class="aside-short">
+            <div class="item-container middle">            
+                <div><a href=""><img class="show" src="./assets/home.png"></div>
+                <div><p class="font-small">Home</p></a></div>
+            </div>
+            <div class="item-container middle">
+                <div><a href=""><img class="show" src="./assets/explore.png"></div>
+                <div><p class="font-small">Explore</p></a></div>
+            </div>
+            <div class="item-container middle">
+                <div><a href=""><img class="show" src="./assets/subscriptions.png"></div>
+                <div><p class="font-small">Subscriptions</p></a></div>
+            </div> 
+
+            <div class="item-container middle">
+                <div><a href=""><img src="./assets/history.png"></div>
+                <div><p class="font-small">History</p></a></div>
+            </div>
+        
+            <div class="item-container middle">
+                <div><a href=""><img class="show" src="./assets/yourVideos.png"></div>
+           <div> <p class="font-small">You</p></a></div>
+            </div>
+        </div>
+        
+        <div class="first-section">
+            <div class="video-part">
+                <iframe id="yt-video" width="900" height="460" src=""fullscreen="true" >
+    
+                </iframe>
+            </div>
+            <div class="info-part">
+                <div class="information">
+                    <div id="title" class="videopage-video-title">
+                            title
+                    </div>
+                    
+                        <div class="icon-title">
+                            <div class="channel-avatar" id="avatar">
+                              avatar
+                            </div>
+                            <div class="name-subs">
+                                <p class="videoDetails-channel-name" id="ch-name">chhanelname</p>
+                                <p class="subs"id="subs">subscribers</p>
+                            </div>
+                            <div class="subs-button" id="sub-button"><p>Subscribe</p></div>
+                            <div class="like-dislike">
+                                <div class="black-button thumbs">
+                                    <div class="like">
+                                        <div class="icon"><img src="./assets/liked.png"></div>
+                                        <div id="likes-num" class="like-no.">likes</div>
+                                    </div>
+                                    <div class="border-color">|</div>
+                                    <div class="dislike">
+                                        <div class="icon"><img src="./assets/icons/DisLiked.png"></div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="share black-button">
+                                    <div class="icon"><img src="./assets/icons/Share.png"></div>
+                                    <div class="share-title">Share</div>
+                                </div>
+                                <div class="download black-button">
+                                    <div class="icon"><img src="./assets/liked.png"></div>
+                                    <div class="download-title">Download</div>
+                                </div>
+                                <div class="more black-button" id="more">
+                                    <img src="./assets/icons/More.png">
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="description-section" id="description-section">
+    
+                    </div>
+    
+                   
+                </div>
+                <div class="commentsection">
+                     <div id="commentno"></div>
+                    <div id="comments"></div>
+                </div>
+            </div>
+            
+            
             
         </div>
         <div class="second-section">
             
         </div>
       </div>
-
+      <script src="./video.js"></script>
+            
+    <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>

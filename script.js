@@ -5,12 +5,13 @@ const Channel_URL="https://www.googleapis.com/youtube/v3/channels?";
 const container = document.getElementById("videos-container");
 const main_container = document.getElementById("main-container");
 
-let sidebar=document.querySelector(".sidebar")
+let sidebar=document.querySelector(".sidebar");
 let hamburger=document.querySelector(".hamimg");
 hamburger.onclick=function(){
   sidebar.classList.toggle("sidebar-none");
   main_container.classList.toggle("sidebar-none-container");
 }
+
 async function getVideos(q) {
     //const url = `${BASE_URL}/search?key=${API_KEY}&q=${q}&type=videos&maxResults=30`;
     const response = await fetch(BASE_URL+ new URLSearchParams({
@@ -65,10 +66,54 @@ async function getVideos(q) {
       return url;
       
 
-      
-     
-  
   }
+
+  function timeAgo(dateString) {
+    const date = new Date(dateString);
+    const now = new Date();
+    const timeDifference = now - date;
+
+    const minute = 60 * 1000; // milliseconds in a minute
+    const hour = minute * 60; // milliseconds in an hour
+    const day = hour * 24; // milliseconds in a day
+    const week = day * 7; // milliseconds in a week
+    const month = day * 30; // approximate milliseconds in a month
+    const year=month*12;
+
+    if (timeDifference < minute) {
+        return 'just now';
+    } else if (timeDifference < hour) {
+        let a=Math.floor(timeDifference / minute) 
+        if(a==1)return a + ' minute ago';
+        else return  a + ' minutes ago';
+    } else if (timeDifference < day) {
+      let a=Math.floor(timeDifference / hour);
+      if( a ==1)return a+ ' hour ago';
+       else  return Math.floor(timeDifference / hour) + ' hours ago';
+    } else if (timeDifference < week) {
+      let a=Math.floor(timeDifference / day);
+      if( a ==1)return a+ ' day ago';
+       else  return Math.floor(timeDifference / day) + ' days ago';
+    } else if (timeDifference < month) {
+      let a=Math.floor(timeDifference / week);
+      if( a ==1)return a+ ' week ago';
+        else return Math.floor(timeDifference / week) + ' weeks ago';
+    } else if(timeDifference<year) {
+      let a=Math.floor(timeDifference / month);
+      if( a ==1)return a+ ' month ago';
+        return Math.floor(timeDifference / month) + ' months ago';
+    }
+    else{
+      let a=Math.floor(timeDifference / year);
+      if( a ==1)return a+ ' year ago';
+      else return a+ ' years ago';
+    }
+}
+
+const dateString = '2023-11-24T15:35:04Z';
+const result = timeAgo(dateString);
+console.log(result); // Output will be in the "ago" format
+
   
   // async function getVideoDetails(videoId) {
   //   const url = `${BASE_URL}/videos?key=${API_KEY}&part=
@@ -106,7 +151,12 @@ async function getVideos(q) {
       
       
       container.innerHTML += `
-      <div class="video-info" onclick="openVideoDetails('${video.id}')" >
+      <div class="video-info" onclick="openVideoDetails(
+        '${video.id}','${thumbnailUrl}','${thisurl}',
+        '${video.snippet.localized.title}',
+        '${video.snippet.channelTitle}',
+        '${video.statistics.viewCount}',
+        '${video.snippet.channelId}')" >
           <div class="video-image">
             <img src="${thumbnailUrl}" alt="video thumbnail" />
           </div>
@@ -120,7 +170,7 @@ async function getVideos(q) {
             </div>
             <div class="channel-description">
               <p class="channel-name">${video.snippet.channelTitle}</p>
-              <p class="video-views">${video.statistics.viewCount+" views. 1week ago"}</p>
+              <p class="video-views">${video.statistics.viewCount}views. ${timeAgo(video.snippet.publishedAt)}</p>
               
             </div>
           </div>
@@ -129,9 +179,29 @@ async function getVideos(q) {
     }
   }
   
-  function openVideoDetails(videoId) {
-    localStorage.setItem("videoId", videoId);
-    window.open("/videoDetails.html");
+  function openVideoDetails(id,thumbnailUrl,channelimg,title,channeltitle,viewcount,channelId) {
+    
+    const videoDetails = [id,thumbnailUrl, channelimg, title,channeltitle,viewcount,channelId];
+
+// Convert the array to a string and store it in localStorage
+localStorage.setItem("videoDetails", JSON.stringify(videoDetails));
+    
+    const storedData = localStorage.getItem("videoDetails");
+
+// Parse the string back to an array
+const parsedData = JSON.parse(storedData);
+    console.log(parsedData);
+     window.open("./videoDetails.html");
   }
-  
- getVideos("");
+
+const searchinput=document.getElementById("search");
+const search_btn=document.getElementById("searchicon"); 
+let searchLink="https://www.youtube.com/results?search_query=";
+
+search_btn.addEventListener('click',()=>{
+  if(searchinput.value.length>0){
+    location.href=searchLink+searchinput.value;
+  }
+})
+
+getVideos("");
